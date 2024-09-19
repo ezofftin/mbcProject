@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.mbc.jeju.mapper.HotelMapper">
+	
+	<!-- 호텔 등록 -->
+	<insert id="hotelInsert" parameterType="Map">
+		INSERT INTO hotel(hotelName, hotelPrice, hotelInfo, hotelImage, hotelState, hostNum)
+		VALUES(#{hotelName}, #{hotelPrice}, #{hotelInfo}, #{hotelImage}, #{hotelState}, #{hostNum}) 
+	</insert>
+	<!-- 호텔 수정 -->
+	<update id="hotelUpdate" parameterType="Map">
+		UPDATE hotel SET hotelName=#{hotelName}, hotelPrice=#{hotelPrice}, hotelInfo=#{hotelInfo}, hotelImage=#{hotelImage}, hotelState=#{hotelState}
+		WHERE hotelNum=#{hotelNum} 
+	</update>
+	<!-- 호텔 삭제 -->
+	<delete id="hotelDelete" parameterType="Integer">
+		DELETE FROM hotel WHERE hotelNum = #{hotelNum}
+	</delete>
+	
+	<!-- 호텔 리스트 -->
+	<select id="hotelList" resultType="HotelDTO" parameterType="Map">
+		<![CDATA[
+		SELECT * FROM hotel
+		LEFT JOIN reservation res
+				ON hotel.hotelNum = res.hotelNum
+					AND (
+						(res.checkin <= #{end-date}) 
+						AND 
+						(res.checkout >= #{start-date})) 
+				WHERE res.reserveNum IS NULL;
+				]]>
+	</select>
+	<!-- 호텔 상세정보 -->
+	<select id="hotelInfo" parameterType="Integer" resultType="HotelDTO">
+		SELECT * FROM hotel WHERE hotelNum = #{hotelNum} 
+		
+	</select>
+	
+	
+</mapper>

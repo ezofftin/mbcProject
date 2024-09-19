@@ -1,0 +1,81 @@
+/* 컬러톤 
+메인포인트컬러 : #b69d7c
+추가확장컬러 : #d2b48c
+회색테두리 : #ebebeb
+*/
+
+/* 메가메뉴를 위한 속성 설정 */
+/* .logo {		
+	position:fixed;
+	display:block;	
+	width:100%;
+	top:10.5px;
+	z-index:999;
+	height:64px;
+	border:1px solid red;
+	
+} */
+
+.menubar {		 
+	padding:0;
+	position:relative;
+	overflow: hidden;
+	display:block;	
+	width:100%;
+	top:25.5px;
+	z-index:999;
+	height:56px;
+	/* background-color: blue; */
+	transition: height 0.3s;
+	/* border:1px solid red; */ 
+	
+}	
+.menu_container {
+	position:relative;
+	top:0;
+	left:0;
+	right:0;
+	display:inline-block;	
+	padding:0;
+	margin:auto;
+	z-index:99;
+	/* border:1px solid blue; */
+
+}
+.menus{
+	position:relative;
+	top:0;
+	/* border:1px solid black; */
+	/* background-color:blue; */
+	z-index:99;
+}
+.visual-area{
+	margin-top:64px;
+	/* border:3px solid blue; */
+}
+.nav-link{
+	padding:16px 0;
+	/* border:3px solid yellow;  */
+	
+}
+/* 메뉴 항목에 마우스를 올리면 서브메뉴 표시 */
+.menu:hover .sub-list {
+    max-height: 500px; 
+    opacity: 1;
+}
+.sub-list a{
+	color : black;
+}
+.sub-list a:hover{
+	color:#b69d7c;
+}
+/* 상단고정시 사용을 위한 class */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+

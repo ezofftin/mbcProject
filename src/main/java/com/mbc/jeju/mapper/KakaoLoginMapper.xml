@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.jeju.mapper.KakaoLoginMapper">
+
+    <insert id="insertKakaoUser" parameterType="com.mbc.jeju.domain.KakaoDTO">
+        INSERT INTO kakao_user (id, nickname, email, profile_image_url)
+        VALUES (#{id}, #{nickname}, #{email}, #{profileImageUrl})
+    </insert>
+
+    <select id="findKakaoUserById" parameterType="Long" resultType="com.mbc.jeju.domain.KakaoDTO">
+        SELECT id, nickname, email, profile_image_url
+        FROM kakao_user
+        WHERE id = #{id}
+    </select>
+
+</mapper>

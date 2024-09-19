@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+/* 컬러톤 
+메인포인트컬러 : #b69d7c
+추가확장컬러 : #510532
+회색테두리 : #ebebeb
+*/
+#people {
+	width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 2px solid #ccc;
+}
+
+#hotelPrice {
+	width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#totalPrice {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    width:230px;
+    border: 2px solid #ccc;
+    
+}
+
+#btn{
+	padding: 4px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #b69d7c;
+    border-radius: 30px;
+    background-color: #b69d7c;
+    color: white;
+    width: 120px;
+    cursor: pointer;
+}
+
+-- date picker
+.date-picker {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.date-picker label {
+    margin-bottom: 5px;
+}
+
+.date-picker input[type="date"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+}
+
+.date-picker input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+-- 버튼
+
+.btn{
+    text-align: center;
+/*     justify-content: flex-end;  */
+    float : right;
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    background-color: #b69d7c;
+    color: white;
+    width: 120px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #b69d7c;
+    color:white;
+    border: 1px solid #ccc;    
+}
+.btn:active {
+    background-color: #b69d7c;
+    color:white;
+    border: none;
+}    
+
+.btn-success:active {
+    background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-success:hover {
+    background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-success:disabled {
+    background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-warning:active {
+	background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-warning:hover {
+    background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-warning:disabled {
+    background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-danger:active {
+	background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-danger:hover {
+    background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-danger:disabled {
+    background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-info:active {
+	background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-info:hover {
+    background-color: #b69d7c;
+    color:white;
+    border: none;
+}
+.btn-info:disabled {
+    background-color: #b69d7c;
+    color:white;
+    
+}
+--슬라이더
+.slider-nav .slick-slide {
+	margin: 0 10px; /* 좌우에 각각 10px의 간격 추가 (원하는 값으로 조정 가능) */
+}
+.slider-nav {
+	padding: 0 10px; /* 슬라이더의 양쪽에 추가 공간이 생기지 않도록 슬라이더 자체에 패딩을 추가 */
+	margin-top: 20px;
+}
+	.slider-for img {
+	width: auto; /* 부모 요소의 가로 크기에 맞게 이미지 너비 설정 */
+	height: auto; /* 가로 세로 비율 유지 */
+	max-height: 500px; /* 원하는 최대 높이 설정 */
+	object-fit: cover; /* 이미지를 컨테이너에 맞게 자르기 */
+	margin : auto;
+}
+	.slider-nav img {
+	width: 100%; /* 부모 요소의 가로 크기에 맞게 이미지 너비 설정 */
+	height: auto; /* 가로 세로 비율 유지 */
+	max-height: 100px; /* 원하는 최대 높이 설정 */
+	object-fit: cover; /* 이미지를 컨테이너에 맞게 자르기 */
+}
+
+.slick-prev, .slick-next {
+	display: block !important; /* 화살표 강제 표시 */
+	background-color: #b69d7c; /* 화살표 배경 색상 투명하게*/ 
+	color: black; /* 화살표 색상 */
+	border-radius: 100%; /* 원형으로 표시 */
+	width: 30px;
+	height: 30px;
+	line-height: 50px;
+	text-align: center;
+	z-index: 1000;
+}
+/* 화살표 hover 시 하이라이트 효과 */
+.slick-prev:hover, .slick-next:hover {
+    color: #b69d7c; /* hover 시 화살표 색상 */
+}
+
+

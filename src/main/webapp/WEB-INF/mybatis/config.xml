@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+ <configuration>
+ 	<typeAliases>
+ 		<typeAlias type="com.mbc.jeju.domain.AdminDTO" alias="AdminDTO"/>
+ 		<typeAlias type="com.mbc.jeju.domain.MemberDTO" alias="MemberDTO"/>
+ 		<typeAlias type="com.mbc.jeju.domain.HotelDTO" alias="HotelDTO"/>
+ 		<typeAlias type="com.mbc.jeju.domain.PackageDTO" alias="PackageDTO"/>
+ 		<typeAlias type="com.mbc.jeju.domain.ReservationDTO" alias="ReservationDTO"/> 		
+ 		<typeAlias type="com.mbc.jeju.domain.BoardDTO" alias="BoardDTO"/> 		
+
+ 	</typeAliases>
+ </configuration>
+  

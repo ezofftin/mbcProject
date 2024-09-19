@@ -1,0 +1,271 @@
+@charset "utf-8";
+
+/* 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+/* 컬러톤 
+메인포인트컬러 : #b69d7c
+추가확장컬러 : #d2b48c
+회색테두리 : #ebebeb
+*/
+
+
+
+-- 검색박스
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center; 
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 30px;
+    gap: 10px;
+}
+.search-box input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    width: 300px;
+    box-sizing: border-box;
+}
+.search-box button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #b69d7c;
+    border-radius: 30px;
+    background-color: #fff;
+    color: #b69d7c;
+    width: 100px;
+    cursor: pointer;
+}
+.search-box button:hover {
+    background-color: #b69d7c;
+    color: #fff;
+}
+.search-box input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+footer{
+	background: black;
+	color:#e6e6e6;
+	text-decoration:none; 
+}
+nav.navbar {
+	background: white;
+	font-weight: medium; 
+	font-color: white;
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: white;
+}
+.nav-link2 {
+	color : black;
+	font-weight: bold;
+    display: inline-block;
+    position: relative;
+}
+.nav-link2:hover{
+	color:#b69d7c;
+}
+.nav-link {
+	color : black;
+	font-weight: bold;
+    display: inline-block;
+    position: relative;
+
+}
+.nav-link:hover{
+	color:#b69d7c;
+}
+
+Hover 밑줄
+
+.nav-link:after {
+    content:"";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: #b69d7c;
+    transition: all .5s;
+}
+.nav-link:before {
+    content:"";
+    position: absolute;
+    right: 0%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: #b69d7c;
+    transition: all .5s;
+}
+.nav-link:hover:after {
+    width: 100%
+}
+.nav-link:hover:before {
+    width: 100%
+}
+.btn{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #b69d7c;
+    border-radius: 30px;
+    background-color: #fff;
+    color: #b69d7c;
+    width: 120px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #b69d7c;
+    color:white;
+    }
+.btn:active {
+    background-color: #b69d7c;
+    color:white;
+}    
+    
+.page-link .active{
+	background-color: grey;
+	border-color: none;
+	font-color:black;
+}
+.page-link a{
+	background-color: grey;
+	border-color: none;
+	font-color:black;
+}
+
+fa 아이콘 스타일
+.findIdPw .fa {
+	color:#aaf;
+}
+.findIdPw a{
+	font-size:13px;
+	color: #555;
+	text-decoration: none;
+}
+
+vertical-align: 3px; 수직정렬 기준선을 3px 위로 조정
+.findIdPw a+a:before{
+	content:'';
+	display:inline-block;
+	background-color:#888;
+	width:3px;
+	height:3px;
+	vertical-align: 3px; 
+	margin: 0 5px;
+}
+
+myProfile
+.myProfile {
+	color:white;
+	text-decoration: none;
+	line-height: 42px;
+}
+
+.myProfile:hover{
+	color:white;
+}
+
+인증코드 타이머
+#confirmEmail {
+	display:none; 
+	opacity:0;
+	visibility:hidden;
+	height:0;
+}
+.code-msg{
+	display:none;
+	font-size:11px;
+	color:green;
+}
+.input-code {
+	outline:none;
+	border-radius:30px 0 0 30px;
+	border:1px solid #ced4da;
+	width:70%;
+	padding:6px 12px;
+}
+.time {
+	outline:none;
+	border-radius:0 30px 30px 0;
+	border:1px solid #ced4da;
+	width:30%;
+	padding:9px 12px;
+	border-left:0px;
+	color:red;
+	font-size:13px;
+}
+.pwChangeBtn{
+    background-color: #b69d7c;
+    color:white;
+    border: 1px solid #ccc; 
+    font-size: 16px;
+}
+
+댓글 리스트
+.mb-2 div{
+	cursor:pointer;
+}
+.mb-2 div:hover{
+	background-color:#eee
+}
+.login:hover, .register:hover {
+	color:black
+}
+.nav.nav-tables a{
+	color:black;
+}
+
+.card-info {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 줄 수 설정 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    
+textarea {
+   height : 300px;
+}
+
+
+.input-group input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+-- date picker
+.date-picker {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.date-picker label {
+    margin-bottom: 5px;
+}
+
+.date-picker input[type="date"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
+.date-picker input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+}

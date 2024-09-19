@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbc.jeju.mapper.ReservationMapper">
+	<!-- 예약된 날짜 -->
+	<select id="getReserveDatesForHotel" parameterType="Integer">
+		SELECT checkin, checkout FROM reservation WHERE hotelNum=#{hotelNum}
+	</select>
+	<!-- 예약 정보 8/21 -->
+	<select id="reserveInfo" parameterType="Integer" resultType="ReservationDTO">
+		SELECT * FROM reservation WHERE reserveNum=#{reserveNum}
+	</select>
+	
+	<!-- 내 예약 리스트   8/21 -->
+	<select id="myReserveList" resultType="ReservationDTO">
+		select * from reservation r
+		WHERE r.memberNum = #{memberNum};
+	</select>
+	<!-- host 예약 리스트 -->
+	<select id="hostReserveList" resultType="ReservationDTO">
+SELECT *
+FROM reservation r
+WHERE r.hotelNum in (
+    SELECT hotelNum
+	FROM hotel
+	WHERE hostNum = #{memberNum}
+);
+	</select>
+	
+	<!-- admin 예약 리스트 -->
+	<select id="reserveList" resultType="ReservationDTO">
+		select * from reservation
+	</select>
+	
+	
+	<!--  예약 등록  -->
+	<insert id="reserveInsert" parameterType="ReservationDTO"> 
+		INSERT INTO reservation(memberNum, hotelNum, checkin, checkout, people, totalPrice, state)
+		VALUES(#{memberNum},#{hotelNum},#{checkin},#{checkout},#{people}, #{totalPrice}, '결재 필요') 
+	</insert>
+	
+	<!-- 예약 수정 -->
+	<update id="reserveUpdate" parameterType="Map">
+		UPDATE reservation SET checkin=#{checkin}, checkout=#{checkout}, people=#{people}, totalPrice=#{totalPrice} 
+		WHERE reserveNum=#{reserveNum}
+	</update>
+	<!-- 예약 삭제 -->
+	<delete id="reserveDelete" parameterType="Integer">
+		DELETE FROM reservation WHERE reserveNum=#{reserveNum}
+	</delete>
+
+	<!-- 결재 완료 -->
+	<update id="paymentOk" parameterType="Integer">
+		UPDATE reservation SET state='결재 완료'
+		WHERE reserveNum=#{reserveNum}
+	</update>
+
+	<!-- 결재 취소 -->
+	<update id="resetPayment" parameterType="Integer">
+		UPDATE reservation SET state='결재 취소'
+		WHERE reserveNum=#{reserveNum}
+	</update>
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbc.jeju.mapper.PackageMapper">
+
+	<!-- admin @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	<!-- 핫딜 상품 등록 -->
+	<insert id="insertPackage" parameterType="Map">
+		INSERT INTO package(packageName, packageImage, packagePrice, packageType, packageInfo)
+		VALUES(#{packageName}, #{packageImage}, #{packagePrice}, #{packageType}, #{packageInfo})
+	</insert>
+
+	<!-- 핫딜 리스트 조회 -->
+	<select id="packageList" resultType="PackageDTO">
+		SELECT * FROM package ORDER
+		BY packageNum DESC
+	</select>
+
+	<!-- 핫딜 삭제 -->
+	<delete id="deletePackage" parameterType="Integer">
+		DELETE FROM package
+		WHERE packageNum = #{packageNum}
+	</delete>
+
+	<!-- 핫딜 상품 수정 폼 열기 -->
+	<select id="modifyPackage" parameterType="Integer" resultType="PackageDTO">
+		SELECT * FROM package WHERE packageNum = #{packageNum}
+	</select>
+
+	<!-- 핫딜 상품 수정 OK -->
+	<update id="updatePackage" parameterType="Map">
+		UPDATE package SET
+		packageName = #{packageName}, packageImage = #{packageImage},
+		packagePrice = #{packagePrice}, packageType = #{packageType}, packageInfo = #{packageInfo}
+		WHERE packageNum = #{packageNum}
+	</update>
+	
+	<!-- user @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	<!-- packageType -->
+	<select id="getPackByType" resultType="PackageDTO">
+		SELECT * FROM package WHERE packageType = #{packageType}
+		ORDER BY packageNum = #{packageNum} DESC
+	</select>
+	
+	<!-- package 상세 페이지-->
+	<select id="getPackage" parameterType="Integer" resultType="PackageDTO">
+		SELECT * FROM package WHERE packageNum = #{packageNum}
+	</select>
+
+	<!-- 예약 ! -->
+	<insert id="reservePackInput" parameterType="ReservationDTO">
+		INSERT INTO reservation(memberNum, packageNum, people, totalPrice)
+		VALUES (#{memberNum}, #{packageNum}, #{people}, #{packagePrice})
+	</insert>
+</mapper>
+

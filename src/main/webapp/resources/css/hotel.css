@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+/* 컬러톤 
+메인포인트컬러 : #b69d7c
+추가확장컬러 : #510532
+회색테두리 : #ebebeb
+*/
+
+.detail {
+	display: block;
+}
+.btn{
+
+    text-align: center;
+/*     justify-content: flex-end;  */
+    float : right;
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #b69d7c;
+    border-radius: 30px;
+    background-color: #fff;
+    color: #b69d7c;
+    width: 120px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #b69d7c;
+    color:white;
+    border: 1px solid #ccc;    
+}
+.btn:active {
+    background-color: #b69d7c;
+    color:white;
+}    
+
+.btn-success:active {
+    background-color: #b69d7c;
+    color:white;
+}
+.btn-success:hover {
+    background-color: #b69d7c;
+    color:white;
+}
+.btn-success:disabled {
+    background-color: #b69d7c;
+    color:white;
+}
+.btn-warning:active {
+	background-color: #b69d7c;
+    color:white;
+}
+.btn-warning:hover {
+    background-color: #b69d7c;
+    color:white;
+}
+.btn-warning:disabled {
+    background-color: #b69d7c;
+    color:white;
+}
+
+
+-- date picker
+.date-picker{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.date-picker input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+} 

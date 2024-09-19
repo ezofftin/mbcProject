@@ -1,0 +1,114 @@
+
+use jejudb;
+
+-- 어드민 (최고관리자)
+drop table admin;
+create table admin(
+   adminId varchar(50) not null,
+    adminPw varchar(50) not null,
+    adminName varchar(50) not null,
+    adminEmail varchar(50) not null,
+    adminTel varchar(20) not null
+    );
+
+select * from admin;
+
+
+-- 호텔
+
+drop table hotel;
+
+create table hotel(   
+   hotelNum int auto_increment primary key,
+   hotelName varchar(50) not null,
+   hotelPrice int not null default 0,
+   hotelInfo varchar(2000) not null,
+   hotelImage varchar(1000) not null,
+   hotelState varchar(50) not null,
+    hostNum int not null,
+    foreign key(hostNum) references member(memberNum)
+);
+
+select * from hotel;
+
+
+-- 예약 -- // drop 해야하면 가장 먼저 하기 
+
+drop table reservation;
+
+-- alter table reservation add state varchar(50);
+
+create table reservation(
+   reserveNum int auto_increment primary key,
+   memberNum int not null,
+   packageNum int,
+    hotelNum int,
+    checkin date not null,
+    checkout date not null,
+    people int not null,
+    totalPrice int not null,
+    state varchar(50) not null,
+    foreign key(memberNum) references member(memberNum),
+    foreign key(hotelNum) references hotel(hotelNum),
+    foreign key(packageNum) references package(packageNum)
+);
+
+select * from reservation;
+
+-- 멤버
+
+drop table member;
+create table member(
+   memberNum int auto_increment primary key,
+    memberId varchar(50) not null,
+    memberPw varchar(300) not null,
+    memberName varchar(50) not null,
+    memberEmail varchar(50) not null,
+    memberTel varchar(50) not null,
+    memberType varchar(20)
+);
+
+select * from member;
+
+
+
+ 
+
+
+
+-- 프로모션 패키지
+drop table package;
+CREATE TABLE package (
+    packageNum INT PRIMARY KEY AUTO_INCREMENT,
+    packageName VARCHAR(255),
+    packageImage VARCHAR(255),
+    packagePrice DECIMAL,
+    packageType VARCHAR(255),
+    packageInfo TEXT
+);
+select * from package;
+
+-- 비밀번호 암호와 때문에 비번변경 안됨. 아래 방법으로 해결
+alter table member modify memberPw varchar(300); 
+
+-- 게시판 추가  
+drop table tbl_board;
+create table tbl_board(
+   bid int auto_increment primary key,
+    subject varchar(100) not null,
+    contents varchar(3000) not null,
+    hit int default 0,
+    writer varchar(50) not null,
+                     -- now() == oracle sysdate
+    reg_date datetime default now() not null
+);
+
+insert into tbl_board(subject, contents, writer)
+values('테스트!~~', '테스트', '아무개');
+
+select * from tbl_board order by bid desc;
+
+
+
+alter table reservation add state varchar(50);
+
